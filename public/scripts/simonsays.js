@@ -99,13 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const gamepad = navigator.getGamepads()[gamepadIndex];
             if (gamepad) {
                 if (gamepad.buttons.length === 16) {
-                    // PlayStation Controller
                     if (gamepad.buttons[playstationButtons.circle].pressed) handleChoice('red');
                     else if (gamepad.buttons[playstationButtons.cross].pressed) handleChoice('blue');
                     else if (gamepad.buttons[playstationButtons.triangle].pressed) handleChoice('green');
                     else if (gamepad.buttons[playstationButtons.square].pressed) handleChoice('yellow');
                 } else {
-                    // Xbox Controller
                     if (gamepad.buttons[xboxButtons.b].pressed) handleChoice('red');
                     else if (gamepad.buttons[xboxButtons.x].pressed) handleChoice('blue');
                     else if (gamepad.buttons[xboxButtons.a].pressed) handleChoice('green');

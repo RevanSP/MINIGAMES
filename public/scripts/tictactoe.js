@@ -57,16 +57,16 @@ function pollGamepad() {
 
     gamepadInterval = setInterval(() => {
         const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
-        const gp = gamepads[0]; // Assuming single player
+        const gp = gamepads[0]; 
 
         if (gp) {
             const now = Date.now();
-            const dpadUp = gp.buttons[12].pressed; // Xbox Dpad Up or PS Dpad Up
-            const dpadDown = gp.buttons[13].pressed; // Xbox Dpad Down or PS Dpad Down
-            const dpadLeft = gp.buttons[14].pressed; // Xbox Dpad Left or PS Dpad Left
-            const dpadRight = gp.buttons[15].pressed; // Xbox Dpad Right or PS Dpad Right
-            const l1 = gp.buttons[4].pressed; // L1 or LB button
-            const r1 = gp.buttons[5].pressed; // R1 or RB button
+            const dpadUp = gp.buttons[12].pressed; 
+            const dpadDown = gp.buttons[13].pressed; 
+            const dpadLeft = gp.buttons[14].pressed; 
+            const dpadRight = gp.buttons[15].pressed;
+            const l1 = gp.buttons[4].pressed; 
+            const r1 = gp.buttons[5].pressed; 
 
             if (dpadUp && now - lastUpdate > DEBOUNCE_TIME) {
                 changeSelection(-3);
@@ -85,16 +85,16 @@ function pollGamepad() {
                 lastUpdate = now;
             }
 
-            if (gp.buttons[0].pressed) { // A button for Xbox or Cross button for PS
+            if (gp.buttons[0].pressed) { 
                 handleCellClick({ target: cells[selectedIndex] });
             }
 
-            if (l1 && now - lastUpdate > DEBOUNCE_TIME) { // L1 or LB button to select 'X'
+            if (l1 && now - lastUpdate > DEBOUNCE_TIME) {
                 setPlayer('X');
                 lastUpdate = now;
             }
 
-            if (r1 && now - lastUpdate > DEBOUNCE_TIME) { // R1 or RB button to select 'O'
+            if (r1 && now - lastUpdate > DEBOUNCE_TIME) { 
                 setPlayer('O');
                 lastUpdate = now;
             }

@@ -4,7 +4,6 @@ let currentIndex = 0, inputSource = null, gamepadIndex = null, lastInputTime = 0
 const inputDelay = 135;
 let hasFlippedCard = false, lockBoard = false, firstCard, secondCard;
 
-// Fullscreen toggle
 fullscreenBtn.addEventListener('click', () => {
     if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen().catch(err => console.error(`Error: ${err.message} (${err.name})`));
@@ -13,7 +12,6 @@ fullscreenBtn.addEventListener('click', () => {
     }
 });
 
-// Handle gamepad input
 function handleGamepadInput() {
     const gamepad = gamepadIndex !== null ? navigator.getGamepads()[gamepadIndex] : null;
     if (gamepad && Date.now() - lastInputTime >= inputDelay) {
@@ -31,7 +29,6 @@ function handleGamepadInput() {
     }
 }
 
-// Flip card logic
 function flipCard() {
     if (lockBoard || this === firstCard) return;
     this.classList.add('flip');
@@ -46,12 +43,10 @@ function flipCard() {
     checkForMatch();
 }
 
-// Check if cards match
 function checkForMatch() {
     firstCard.dataset.framework === secondCard.dataset.framework ? disableCards() : unflipCards();
 }
 
-// Disable matched cards
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
@@ -59,7 +54,6 @@ function disableCards() {
     checkWin();
 }
 
-// Unflip non-matched cards
 function unflipCards() {
     lockBoard = true;
     setTimeout(() => {
@@ -69,39 +63,32 @@ function unflipCards() {
     }, 1500);
 }
 
-// Reset board
 function resetBoard() {
     [hasFlippedCard, lockBoard, firstCard, secondCard] = [false, false, null, null];
 }
 
-// Check if player has won
 function checkWin() {
     if (document.querySelectorAll('.flip').length === cards.length) {
         document.getElementById('winner').textContent = 'Congratulations! You Win!';
     }
 }
 
-// Shuffle cards
 function shuffle() {
     cards.forEach(card => {
         card.style.order = Math.floor(Math.random() * cards.length);
     });
 }
 
-// Update card selection for controller
 function updateCardSelection() {
     cards.forEach((card, index) => {
         card.classList.toggle('selected', index === currentIndex && inputSource === 'controller');
     });
 }
 
-// Reset game state
 function resetGame() {
-    // Reloads the current page
     window.location.reload();
 }
 
-// Main game loop for handling inputs
 function gameLoop() {
     handleGamepadInput();
     requestAnimationFrame(gameLoop);

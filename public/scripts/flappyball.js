@@ -11,7 +11,6 @@ let birdY = 250, birdVelocity = 0, score = 0, gameInterval, pipeIntervalId, game
 const gravity = 0.5, jump = -8, pipeSpeed = 3, pipeInterval = 1500, pipeWidth = 60, pipeGap = 150;
 let pipes = [];
 
-// Prevent text selection and page scrolling on mobile
 gameContainer.style.touchAction = 'none';
 
 startBtn.addEventListener('click', () => {
@@ -23,12 +22,10 @@ fullscreenBtn.addEventListener('click', () => {
     document.fullscreenElement ? document.exitFullscreen() : gameContainer.requestFullscreen();
 });
 
-// Control bird jump using keyboard spacebar
 document.addEventListener('keydown', (event) => {
     if (event.key === ' ') birdVelocity = jump;
 });
 
-// Control bird jump using touch events
 gameContainer.addEventListener('touchstart', () => {
     birdVelocity = jump;
 });

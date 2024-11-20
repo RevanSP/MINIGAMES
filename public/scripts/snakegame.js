@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let gamepadIndex = null;
     let lastUpdateTime = 0;
-    const frameInterval = 100; // milliseconds
+    const frameInterval = 100; 
 
     function gameLoop(timestamp) {
         if (timestamp - lastUpdateTime >= frameInterval) {
@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function changeDirection(event) {
         const { keyCode } = event;
         const { x, y } = direction;
-        if (keyCode === 37 && x === 0) direction = { x: -1, y: 0 }; // Left
-        else if (keyCode === 38 && y === 0) direction = { x: 0, y: -1 }; // Up
-        else if (keyCode === 39 && x === 0) direction = { x: 1, y: 0 }; // Right
-        else if (keyCode === 40 && y === 0) direction = { x: 0, y: 1 }; // Down
+        if (keyCode === 37 && x === 0) direction = { x: -1, y: 0 }; 
+        else if (keyCode === 38 && y === 0) direction = { x: 0, y: -1 };
+        else if (keyCode === 39 && x === 0) direction = { x: 1, y: 0 }; 
+        else if (keyCode === 40 && y === 0) direction = { x: 0, y: 1 }; 
     }
 
     function checkCollision() {
@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const gamepad = navigator.getGamepads()[gamepadIndex];
             if (gamepad) {
                 const [xAxis, yAxis] = gamepad.axes;
-                if (xAxis < -0.5 && direction.x === 0) direction = { x: -1, y: 0 }; // Left
-                else if (xAxis > 0.5 && direction.x === 0) direction = { x: 1, y: 0 }; // Right
-                else if (yAxis < -0.5 && direction.y === 0) direction = { x: 0, y: -1 }; // Up
-                else if (yAxis > 0.5 && direction.y === 0) direction = { x: 0, y: 1 }; // Down
+                if (xAxis < -0.5 && direction.x === 0) direction = { x: -1, y: 0 }; 
+                else if (xAxis > 0.5 && direction.x === 0) direction = { x: 1, y: 0 }; 
+                else if (yAxis < -0.5 && direction.y === 0) direction = { x: 0, y: -1 };
+                else if (yAxis > 0.5 && direction.y === 0) direction = { x: 0, y: 1 }; 
             }
         }
     }
@@ -106,10 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Gamepad disconnected:', event.gamepad);
     });
 
-    // Keyboard controls
     document.addEventListener('keydown', changeDirection);
 
-    // Mobile button controls
     const buttonControls = {
         'upBtn': { x: 0, y: -1 },
         'downBtn': { x: 0, y: 1 },

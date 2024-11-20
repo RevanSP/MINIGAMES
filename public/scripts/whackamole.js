@@ -1,4 +1,3 @@
-// Fullscreen Toggle
 const fullscreenBtn = document.getElementById('fullscreenBtn');
 fullscreenBtn.addEventListener('click', () => {
     if (!document.fullscreenElement) {
@@ -8,7 +7,6 @@ fullscreenBtn.addEventListener('click', () => {
     }
 });
 
-// Game Variables
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const scoreBoard = document.getElementById('score');
@@ -16,7 +14,6 @@ let lastHole;
 let timeUp = false;
 let score = 0;
 
-// Helper Functions
 const randomTime = (min, max) => Math.round(Math.random() * (max - min) + min);
 const randomHole = (holes) => {
     let hole;
@@ -27,7 +24,6 @@ const randomHole = (holes) => {
     return hole;
 };
 
-// Game Functions
 const peep = () => {
     const time = randomTime(200, 1000);
     const hole = randomHole(holes);
