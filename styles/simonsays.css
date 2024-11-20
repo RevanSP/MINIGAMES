@@ -1,0 +1,63 @@
+body {
+    font-family: 'Google Sans Text', sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+.button {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    opacity: 1;
+}
+
+.button.flash {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+#message {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 150px);
+    gap: 10px;
+    /* Adjust spacing if needed */
+}
+
+.button {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    /* Optional: for rounded corners */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Ensure images don't overflow the button */
+}
+
+.controller-container {
+    display: flex;
+    gap: 5px;
+    /* Adjust spacing between images if needed */
+}
+
+.controller-img {
+    width: 30px;
+    /* Adjust size as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    object-fit: contain;
+    /* Ensure images fit within the container */
+}

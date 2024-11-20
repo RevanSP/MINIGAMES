@@ -1,0 +1,46 @@
+* {
+    font-family: 'Google Sans Text', sans-serif;
+}
+
+.choice {
+    width: 90px;
+    height: 100px;
+    margin: 0 15px;
+    background-color: #2c2d31;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.choice:hover {
+    transform: scale(1.1);
+}
+
+.choice img {
+    width: 60px;
+    height: 60px;
+}
+
+.choice {
+    margin-bottom: 5px;
+    /* Space between choice and controller images */
+}
+
+.controller-image {
+    width: 30px;
+    /* Adjust size if needed */
+    margin-top: 3px;
+    /* Space between choice image and controller button */
+}
+
+.result,
+.score {
+    font-size: 1.5rem;
+}
+
+body {
+    background-color: #111;
+}

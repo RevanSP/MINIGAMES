@@ -1,0 +1,13 @@
+* {
+    font-family: 'Google Sans Text', sans-serif;
+}
+
+canvas {
+    background-color: #2c2d31;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+
+body {
+    background-color: #111;
+}

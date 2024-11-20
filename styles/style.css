@@ -1,0 +1,71 @@
+    /* Dark mode scrollbar for WebKit browsers */
+    ::-webkit-scrollbar {
+        width: 12px;
+        /* Adjust width as needed */
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #1A1A1A;
+        /* Dark background for the track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #333;
+        /* Dark color for the scrollbar thumb */
+        border-radius: 6px;
+        /* Rounded corners for the thumb */
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+        /* Lighter dark color for thumb on hover */
+    }
+
+    footer,
+    nav {
+        background-color: #1A1A1A;
+    }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        font-family: 'Google Sans Text', sans-serif;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        /* Add transition for smooth effect */
+    }
+
+    .full-height {
+        min-height: 100vh;
+    }
+
+    body.dark-mode {
+        background-color: #181818;
+        color: #e0e0e0;
+    }
+
+    body.light-mode {
+        background-color: #f0f0f0;
+        color: #121212;
+    }
+
+    .card {
+        background-color: #1A1A1A;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Smooth transition for transform and box-shadow */
+    }
+
+    /* Zoom effect on hover */
+    .card:hover {
+        transform: scale(1.05);
+        /* Slightly zoom in */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+        /* Enhanced shadow on hover */
+    }
+
+    /* Zoom effect on active (click) */
+    .card:active {
+        transform: scale(0.98);
+        /* Slightly zoom out to simulate press effect */
+    }

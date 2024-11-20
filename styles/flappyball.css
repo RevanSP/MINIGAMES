@@ -1,0 +1,96 @@
+* {
+    font-family: 'Google Sans Text', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    height: 600px;
+    background-color: #4ec0ca;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#bird {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #121212;
+    border-radius: 50%;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+}
+
+.pipe {
+    position: absolute;
+    width: 60px;
+    background-color: #009900;
+    bottom: 0;
+}
+
+.pipe.upper {
+    transform: rotate(180deg);
+    bottom: auto;
+    top: 0;
+}
+
+#score {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #ffffff;
+    display: none;
+}
+
+#restartBtn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #121212;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: none;
+}
+
+#restartBtn:hover {
+    background-color: #222;
+}
+
+#startScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.btn-front {
+    position: relative;
+    /* atau `absolute` jika Anda memerlukan posisi tetap */
+    z-index: 9999;
+    /* Nilai yang tinggi untuk memastikan tombol berada di depan */
+}
+
+body {
+    background-color: #111;
+}
